@@ -12,6 +12,15 @@ public class BankAccountTester {
         harrysChecking.withdraw(500);
         System.out.println(harrysChecking.getBalance());
         System.out.println("Expected: 1500");
+
+        BankAccount inneKonto = new BankAccount(2000);
+        inneKonto.withdraw(500);
+        System.out.println(inneKonto.getBalance());
+
+        System.out.println(harrysChecking == inneKonto);
+        System.out.println(harrysChecking.equals(inneKonto));
+
+        System.out.println(harrysChecking.toString());
     }
 
 
