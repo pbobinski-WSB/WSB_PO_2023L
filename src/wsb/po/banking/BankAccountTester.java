@@ -1,4 +1,4 @@
-package wsb.po.second.banking;
+package wsb.po.banking;
 
 public class BankAccountTester {
     /**
@@ -20,7 +20,7 @@ public class BankAccountTester {
         System.out.println(harrysChecking == inneKonto);
         System.out.println(harrysChecking.equals(inneKonto));
 
-        System.out.println(harrysChecking.toString());
+        System.out.println(harrysChecking);
     }
 
 

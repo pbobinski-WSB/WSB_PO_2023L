@@ -1,4 +1,4 @@
-package wsb.po.second.banking;
+package wsb.po.banking;
 
 public class BankAccount {
 
