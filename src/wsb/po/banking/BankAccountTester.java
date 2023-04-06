@@ -1,27 +1,34 @@
 package wsb.po.banking;
 
 public class BankAccountTester {
-    /**
-     * Tests the methods of the BankAccount class.
-     *
-     * @param args not used
-     */
+
     public static void main(String[] args) {
-        BankAccount harrysChecking = new BankAccount();
-        harrysChecking.deposit(2000);
-        harrysChecking.withdraw(500);
-        System.out.println(harrysChecking.getBalance());
-        System.out.println("Expected: 1500");
 
-        BankAccount inneKonto = new BankAccount(2000);
-        inneKonto.withdraw(500);
-        System.out.println(inneKonto.getBalance());
+        Customer klient1 = new Customer("Simms", "Jane");
 
-        System.out.println(harrysChecking == inneKonto);
-        System.out.println(harrysChecking.equals(inneKonto));
+        Customer klient2 = new Customer("Bryant", "Owen");
 
-        System.out.println(harrysChecking);
+        BankAccount account = new BankAccount(500);
+        klient1.addAccount(account);
+        account = new BankAccount(200);
+        klient1.addAccount(account);
+        account = new BankAccount(200);
+        klient2.addAccount(account);
+        account = new BankAccount(1500);
+        klient2.addAccount(account);
+        account = new BankAccount(200);
+        klient2.addAccount(account);
+
+        System.out.println("Klient 1 " + klient1);
+        for (int i = 0; i < klient1.getNumberOfAccounts(); i++) {
+            System.out.println("\tKonto " + (i + 1) + " " + klient1.getAccount(i));
+        }
+        System.out.println("Klient 2 " + klient2);
+        for (int i = 0; i < klient2.getNumberOfAccounts(); i++) {
+            System.out.println("\tKonto " + (i + 1) + " " + klient2.getAccount(i));
+        }
+
+
     }
-
 
 }
