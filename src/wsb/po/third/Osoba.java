@@ -39,6 +39,6 @@ public class Osoba implements Comparable<Osoba> {
 
     @Override
     public int compareTo(Osoba o) {
-        return Integer.compare(this.getPriority(),o.getPriority());
+        return Integer.compare(o.getPriority(),this.getPriority());
     }
 }

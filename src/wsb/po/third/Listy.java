@@ -57,6 +57,14 @@ public class Listy {
             System.out.println("strings "+s);
         }
 
+        Iterator<Integer> it = ints.listIterator();
+        while (it.hasNext()) {
+            System.out.println("ints "+it.next());
+        }
+        Iterator<String> its = strings.listIterator();
+        while (its.hasNext()) {
+            System.out.println("strings "+its.next());
+        }
 
     }
 
