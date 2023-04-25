@@ -14,8 +14,11 @@ public class CashRegisterTester
       register.enterPayment(2, Coin.DOLLAR);
       register.enterPayment(5, Coin.DIME);
       System.out.print("Change: ");
-      System.out.println(register.giveChange());
+      double change = register.giveChange();
+      System.out.println(change);
       System.out.println("Expected: 0.25");
+      System.out.print("In PLN: ");
+      System.out.println(Exchange.usd2pln(change));
 
       register.recordPurchase(2.25);
       register.recordPurchase(19.25);
