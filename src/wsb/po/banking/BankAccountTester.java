@@ -28,6 +28,14 @@ public class BankAccountTester {
             System.out.println("\tKonto " + (i + 1) + " " + klient2.getAccount(i));
         }
 
+        System.out.println(account);
+        System.out.println(account.withdraw(300));
+        System.out.println(account.deposit(-50));
+        System.out.println(account);
+        System.out.println(account.withdraw(100));
+        System.out.println(account.deposit(50));
+        System.out.println(account);
+
 
     }
 
