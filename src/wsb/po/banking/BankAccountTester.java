@@ -2,30 +2,40 @@ package wsb.po.banking;
 
 public class BankAccountTester {
 
+    public static void printAccount(BankAccount ba, int i) {
+        System.out.println("\tKonto " + (i + 1) + " " + ba+ " "
+                + (ba instanceof SavingsAccount ? "SA" : "") + " "
+                + (ba instanceof CheckingAccount ? "CA" : ""));
+        if (ba instanceof SavingsAccount) {
+            System.out.println("\t\tProcent " + " " + ((SavingsAccount)ba).getInterestRate());
+        }
+    }
+
     public static void main(String[] args) {
 
         Customer klient1 = new Customer("Simms", "Jane");
 
         Customer klient2 = new Customer("Bryant", "Owen");
 
-        BankAccount account = new BankAccount(500);
+        BankAccount account = new SavingsAccount(500,2);
         klient1.addAccount(account);
-        account = new BankAccount(200);
+        account = new CheckingAccount(200);
         klient1.addAccount(account);
-        account = new BankAccount(200);
+        account = new SavingsAccount(200, 5);
         klient2.addAccount(account);
-        account = new BankAccount(1500);
+        account = new CheckingAccount(1500);
         klient2.addAccount(account);
-        account = new BankAccount(200);
+        account = new SavingsAccount(200,10);
         klient2.addAccount(account);
 
         System.out.println("Klient 1 " + klient1);
         for (int i = 0; i < klient1.getNumberOfAccounts(); i++) {
-            System.out.println("\tKonto " + (i + 1) + " " + klient1.getAccount(i));
+            printAccount(klient1.getAccount(i),i);
+
         }
         System.out.println("Klient 2 " + klient2);
         for (int i = 0; i < klient2.getNumberOfAccounts(); i++) {
-            System.out.println("\tKonto " + (i + 1) + " " + klient2.getAccount(i));
+            printAccount(klient2.getAccount(i),i);
         }
 
         System.out.println(account);
