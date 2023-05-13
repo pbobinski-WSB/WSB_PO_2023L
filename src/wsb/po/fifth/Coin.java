@@ -56,7 +56,7 @@ public class Coin implements Measurable
 
 
 
-   /*/
+   /**/
 
    @Override
    public boolean equals(Object o) {

@@ -28,4 +28,12 @@ public class CheckingAccount extends BankAccount {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                " CheckingAccount{" +
+                "overdraftProtection=" + overdraftProtection +
+                '}';
+    }
 }

@@ -5,7 +5,8 @@ public class BankAccountTester {
     public static void printAccount(BankAccount ba, int i) {
         System.out.println("\tKonto " + (i + 1) + " " + ba+ " "
                 + (ba instanceof SavingsAccount ? "SA" : "") + " "
-                + (ba instanceof CheckingAccount ? "CA" : ""));
+                //+ (ba instanceof CheckingAccount ? "CA" : "")
+                );
         if (ba instanceof SavingsAccount) {
             System.out.println("\t\tProcent " + " " + ((SavingsAccount)ba).getInterestRate());
         }
