@@ -14,9 +14,9 @@ public class CheckingAccount extends BankAccount {
     }
 
     @Override
-    public boolean withdraw(double amount) {
+    public void withdraw(double amount) throws OverdraftException{
         if (amount > getBalance() + overdraftProtection) {
-            return false;
+            throw new OverdraftException("przekroczono saldo i limit",amount - (getBalance() + overdraftProtection));
         }
         if (amount > getBalance()) {
             //użyć limitu
@@ -26,7 +26,7 @@ public class CheckingAccount extends BankAccount {
         } else {
             super.withdraw(amount);
         }
-        return true;
+
     }
 
     @Override
