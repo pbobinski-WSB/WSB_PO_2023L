@@ -27,3 +27,5 @@ hs_err_pid*
 /.idea/vcs.xml
 /.idea/WSB_PO_2023L.iml
 /.idea/uiDesigner.xml
+/moneta.ser
+/out.txt
