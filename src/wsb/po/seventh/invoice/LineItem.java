@@ -24,9 +24,9 @@ public class LineItem
       @return the total price
    */
    public double getTotalPrice()
-   {  
+   {
 
-      return 0;
+      return theProduct.getPrice() * quantity;
    }
    
    /**
@@ -34,7 +34,9 @@ public class LineItem
       @return a formatted string of this item
    */
    public String format()
-   {  
-      return String.format("");
+   {
+      return String.format("%-30s%8.2f%5d%8.2f",
+              theProduct.getDescription(), theProduct.getPrice(),
+              quantity, getTotalPrice());
    }
 }

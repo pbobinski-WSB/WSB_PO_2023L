@@ -13,8 +13,11 @@ public class Product
       @param  description product description
       @param price the product price
    */
-   public Product(String description, double price)
-   {  
+   public Product(String description, double price) throws ArithmeticException
+   {
+      if (price < 0) {
+         throw new ArithmeticException("Price cannot be negative");
+      }
       this.description = description;
       this.price = price;
    }

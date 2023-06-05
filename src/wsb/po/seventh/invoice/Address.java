@@ -34,8 +34,9 @@ public class Address
       @return the address as a string with three lines
    */
    public String format()
-   {  
-      return "";
+   {
+      return name + "\n" + street + "\n"
+              + city + ", " + state + " " + zip;
    }
 }
 

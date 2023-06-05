@@ -31,28 +31,43 @@ public class Invoice
       @param quantity the quantity of the product
    */
    public void add(Product product, int quantity)
-   {  
-
+   {
+      LineItem anItem = new LineItem(product, quantity);
+      items.add(anItem);
    }
 
    /**
-      Formats the invoice.
-      @return the formatted invoice
-   */
+    Formats the invoice.
+    @return the formatted invoice
+    */
    public String format()
-   {  
-      String r =  "                     I N V O I C E\n\n";
+   {
+      String r =  "                     I N V O I C E\n\n"
+              + billingAddress.format()
+              + String.format("\n\n%-30s%8s%5s%8s\n",
+              "Description", "Price", "Qty", "Total");
+
+      for (LineItem item : items)
+      {
+         r = r + item.format() + "\n";
+      }
+
+      r = r + String.format("\nAMOUNT DUE: $%8.2f", getAmountDue());
 
       return r;
    }
 
    /**
-      Computes the total amount due.
-      @return the amount due
-   */
+    Computes the total amount due.
+    @return the amount due
+    */
    public double getAmountDue()
-   {  
+   {
       double amountDue = 0;
+      for (LineItem item : items)
+      {
+         amountDue = amountDue + item.getTotalPrice();
+      }
       return amountDue;
    }
 }
