@@ -1,4 +1,4 @@
-package wsb.po.banking;
+package wsb.po.banking.domain;
 
 import java.util.ArrayList;
 
