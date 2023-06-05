@@ -5,8 +5,22 @@ import java.util.ArrayList;
 public class Bank {
 
     private ArrayList<Customer> customers = new ArrayList<Customer>();
-    public Bank() {
+
+    /*
+    Potrzebny Singleton - tylko jeden Bank
+     */
+    private static Bank bankInstance = null;
+
+    public static Bank getBank() {
+        if (bankInstance == null) {
+            bankInstance = new Bank();
+        }
+        return bankInstance;
     }
+
+    private Bank() {
+    }
+
     public void addCustomer(String f, String l) {
         Customer customer = new Customer(f,l);
         customers.add(customer);

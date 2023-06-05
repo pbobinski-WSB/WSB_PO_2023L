@@ -9,7 +9,8 @@ public class BankTester {
 
     public static void main(String[] args) {
 
-        Bank bank = new Bank();
+        //Bank bank = new Bank();
+        Bank bank = Bank.getBank();
 
         bank.addCustomer("Simms", "Jane");
         bank.addCustomer("Bryant", "Owen");

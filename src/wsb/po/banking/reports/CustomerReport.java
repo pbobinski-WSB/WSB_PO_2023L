@@ -17,7 +17,8 @@ public class CustomerReport {
     }
     public void generateRepotr() {
 
-        Bank bank = new Bank();
+        //Bank bank = new Bank();
+        Bank bank = Bank.getBank();
 
         for (int i = 0; i < bank.getNumberOfCustomers(); i++) {
             System.out.println("Customer ["+(i+1)+"] is "+bank.getCustomer(i));
